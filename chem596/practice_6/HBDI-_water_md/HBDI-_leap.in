@@ -1,0 +1,19 @@
+# load the force field parameter files
+source leaprc.gaff
+source leaprc.water.tip3p
+
+# load the ligand definition and parameters
+loadamberparams HBDI-.frcmod
+HBDI = loadmol2 HBDI-.mol2
+check HBDI
+
+# Solvate in a 12.0 Angs TIP3P truncated octahedron box
+[to be completed...]
+
+# Add Na+ / Cl- to neutralize
+[to be completed...]
+
+# Save the topology and input coordinates
+saveamberparm HBDI HBDI-_water.prmtop HBDI-_water.inpcrd
+savepdb HBDI HBDI-_water.pdb
+quit
